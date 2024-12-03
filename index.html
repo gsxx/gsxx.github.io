@@ -1,26 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<!-- copied from
+https://github.com/chrismaltby/gb-studio/blob/v2beta/appData/js-emulator/index.html
+(see LICENSE.gbstudio)
+-->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game Boy Emulator</title>
-    <script src="simple.js"></script>
-    <style>
-        canvas { 
-            border: 1px solid black; 
-            display: block; 
-            margin: 20px auto; 
-        }
-        body { 
-            font-family: Arial, sans-serif; 
-            text-align: center; 
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="simple.css">
+  <title>binjgb (simple)</title>
 </head>
 <body>
-    <h1>Game Boy Emulator</h1>
-    <canvas id="screen" width="160" height="144"></canvas>
-    <script src="js/router.js"></script>
+  <div id="game">
+    <canvas id="mainCanvas" width="160" height="144">No Canvas Support</canvas>
+  </div>
+  <div id="controller">
+    <div id="controller_dpad">
+      <div id="controller_left"></div>
+      <div id="controller_right"></div>
+      <div id="controller_up"></div>
+      <div id="controller_down"></div>
+    </div>
+    <div id="controller_select" class="capsuleBtn">Select</div>
+    <div id="controller_start" class="capsuleBtn">Start</div>
+    <div id="controller_b" class="roundBtn">B</div>
+    <div id="controller_a" class="roundBtn">A</div>
+  </div>
+  <script src="binjgb.js"></script>
+  <script src="simple.js"></script>
 </body>
-</html>
-
