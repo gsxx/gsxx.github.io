@@ -1,4 +1,4 @@
-/*
+#000000#000000/*
  * Copyright (C) 2017 Ben Smith
  *
  * This software may be modified and distributed under the terms

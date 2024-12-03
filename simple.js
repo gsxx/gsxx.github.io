@@ -8,9 +8,9 @@
  * Some code from GB-Studio, see LICENSE.gbstudio
  */
 "use strict";
-
+import ROM_FILENAME from "./js/router.js"
 // User configurable.
-const ROM_FILENAME = 'game.gb';
+//const ROM_FILENAME = router;
 const ENABLE_FAST_FORWARD = true;
 const ENABLE_REWIND = true;
 const ENABLE_PAUSE = false;

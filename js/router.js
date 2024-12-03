@@ -1,31 +1,14 @@
-async function fetchRomList() {
-    const response = await fetch('roms-list.json');
-    const data = await response.json();
-    return data.games;
-}
+// router.js
 
-function loadGame(romFile) {
-    fetch(`roms/${romFile}`)
-        .then(response => response.arrayBuffer())
-        .then(romBuffer => {
-            const canvas = document.getElementById("screen");
-            const emulator = new Binjgb(canvas, romBuffer);
-            emulator.start();
-        })
-        .catch(err => console.error("Error loading ROM:", err));
-}
+let ROM_FILENAME = ""; // Declarar la variable ROM_FILENAME
 
-async function initRouter() {
-    const roms = await fetchRomList();
-    const currentPath = window.location.pathname;
+window.addEventListener("DOMContentLoaded", function() {
+  // Obtener la ruta actual
+  const path = window.location.pathname;
 
-    // Verifica si la ruta corresponde a un archivo ROM
-    const romFile = currentPath.split("/").pop();
-    if (roms.includes(romFile)) {
-        loadGame(romFile);
-    } else {
-        document.body.innerHTML = "<p>Game not found</p>";
-    }
-}
+  // Extraer el nombre del archivo desde la ruta
+  ROM_FILENAME = path.substring(path.lastIndexOf('/') + 1);
+});
 
-window.onload = initRouter;
+// Exportar la variable ROM_FILENAME
+export default { ROM_FILENAME };
