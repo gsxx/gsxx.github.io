@@ -8,7 +8,14 @@
  * Some code from GB-Studio, see LICENSE.gbstudio
  */
 "use strict";
-import ROM_FILENAME from "./js/router.js"
+let ROM_FILENAME = "";
+window.addEventListener("DOMContentLoaded", function() {
+  // Obtener la ruta actual
+  const path = window.location.pathname;
+
+  // Extraer el nombre del archivo desde la ruta
+  ROM_FILENAME = path.substring(path.lastIndexOf('/') + 1);
+});
 // User configurable.
 //const ROM_FILENAME = router;
 const ENABLE_FAST_FORWARD = true;
