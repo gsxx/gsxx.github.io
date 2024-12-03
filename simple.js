@@ -8,7 +8,7 @@
  * Some code from GB-Studio, see LICENSE.gbstudio
  */
 "use strict";
-let ROM_FILENAME = "https://github.com/gsxx/gsxx.github.io/blob/main/roms/game1.gb"//"empty";
+let ROM_FILENAME = "https://github.com/gsxx/gsxx.github.io/raw/refs/heads/main/roms/game1.gb"
 /*
 window.addEventListener("DOMContentLoaded", function() {
   // Obtener la ruta actual
@@ -135,7 +135,8 @@ const vm = new VM();
 
 // Load a ROM.
 (async function go() {
-  let response = await fetch(ROM_FILENAME);
+  let response = await fetch('roms/game1.gb');
+  console.log(response)
   let romBuffer = await response.arrayBuffer();
   const extRam = new Uint8Array(JSON.parse(localStorage.getItem('extram')));
   Emulator.start(await binjgbPromise, romBuffer, extRam);
