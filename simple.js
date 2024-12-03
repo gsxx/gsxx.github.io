@@ -16,6 +16,7 @@ window.addEventListener("DOMContentLoaded", function() {
   // Extraer el nombre del archivo desde la ruta
   ROM_FILENAME = path.substring(path.lastIndexOf('/') + 1);
 });
+console.log(ROM_FILENAME)
 // User configurable.
 //const ROM_FILENAME = router;
 const ENABLE_FAST_FORWARD = true;
