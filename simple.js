@@ -8,7 +8,8 @@
  * Some code from GB-Studio, see LICENSE.gbstudio
  */
 "use strict";
-let ROM_FILENAME = "empty";
+let ROM_FILENAME = "https://github.com/gsxx/gsxx.github.io/blob/main/roms/game1.gb"//"empty";
+/*
 window.addEventListener("DOMContentLoaded", function() {
   // Obtener la ruta actual
   const path = window.location.pathname;
@@ -19,6 +20,7 @@ window.addEventListener("DOMContentLoaded", function() {
 console.log("the filename is "+ROM_FILENAME)
 // User configurable.
 //const ROM_FILENAME = router;
+//*/
 const ENABLE_FAST_FORWARD = true;
 const ENABLE_REWIND = true;
 const ENABLE_PAUSE = false;
