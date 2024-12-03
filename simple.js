@@ -8,7 +8,7 @@
  * Some code from GB-Studio, see LICENSE.gbstudio
  */
 "use strict";
-let ROM_FILENAME = "";
+let ROM_FILENAME = "empty";
 window.addEventListener("DOMContentLoaded", function() {
   // Obtener la ruta actual
   const path = window.location.pathname;
@@ -16,7 +16,7 @@ window.addEventListener("DOMContentLoaded", function() {
   // Extraer el nombre del archivo desde la ruta
   ROM_FILENAME = path.substring(path.lastIndexOf('/') + 1);
 });
-console.log(ROM_FILENAME)
+console.log("the filename is "+ROM_FILENAME)
 // User configurable.
 //const ROM_FILENAME = router;
 const ENABLE_FAST_FORWARD = true;
