@@ -34,11 +34,11 @@
 </head>
 <body>
     <div class="container">
-        <h1>TIC-80 Fantasy Computer</h1>
         <p>Haz clic en el botón para descargar TIC-80</p>
+        <p>Una vez descargado por favor descomprime el archivo zip</p>
         
         <!-- Botón de descarga -->
-        <button class="btn-download" onclick="downloadTIC80()">Descargar TIC-80.exe</button>
+        <button class="btn-download" onclick="downloadTIC80()">Descargar TIC-80</button>
         
         <!-- Mensaje opcional -->
         <p id="message" style="margin-top: 20px;"></p>
@@ -47,7 +47,7 @@
     <script>
         function downloadTIC80() {
             // URL del archivo (ajusta según donde esté alojado)
-            const fileUrl = 'tic80.exe';  // Ruta local o URL pública
+            const fileUrl = 'tic80.zip';  // Ruta local o URL pública
             
             // Crear un enlace temporal
             const link = document.createElement('a');
