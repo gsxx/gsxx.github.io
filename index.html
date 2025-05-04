@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descargar TIC-80</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            text-align: center;
+        }
+        .btn-download {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .btn-download:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>TIC-80 Fantasy Computer</h1>
+        <p>Haz clic en el botón para descargar TIC-80</p>
+        
+        <!-- Botón de descarga -->
+        <button class="btn-download" onclick="downloadTIC80()">Descargar TIC-80.exe</button>
+        
+        <!-- Mensaje opcional -->
+        <p id="message" style="margin-top: 20px;"></p>
+    </div>
+
+    <script>
+        function downloadTIC80() {
+            // URL del archivo (ajusta según donde esté alojado)
+            const fileUrl = 'tic80.exe';  // Ruta local o URL pública
+            
+            // Crear un enlace temporal
+            const link = document.createElement('a');
+            link.href = fileUrl;
+            link.download = 'tic80.exe';  // Nombre del archivo al descargar
+            
+            // Simular clic
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            // Mostrar mensaje
+            document.getElementById('message').textContent = 'Descarga iniciada...';
+        }
+    </script>
+</body>
+</html>
