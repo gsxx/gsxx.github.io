@@ -1,0 +1,16 @@
+<!-- Inserción simple -->
+<img src="images/mi-foto.jpg" alt="Descripción breve de la imagen" width="600" loading="lazy">
+
+<!-- Inserción responsiva (srcset + sizes) -->
+<img
+  src="images/mi-foto-800.jpg"
+  srcset="images/mi-foto-400.jpg 400w, images/mi-foto-800.jpg 800w, images/mi-foto-1200.jpg 1200w"
+  sizes="(max-width:600px) 100vw, 600px"
+  alt="Descripción breve de la imagen"
+  loading="lazy">
+
+<!-- Uso de <figure> para leyenda -->
+<figure>
+  <img src="images/mi-foto.jpg" alt="Descripción breve" loading="lazy">
+  <figcaption>Pie de foto opcional</figcaption>
+</figure>
