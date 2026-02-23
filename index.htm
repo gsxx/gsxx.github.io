@@ -10,19 +10,47 @@
       margin: 0;
       min-height: 100vh;
     }
+    /* espacio entre los botones principales */
+    button:not(#langToggle) {
+      display: block;
+      margin: 10px auto;
+      padding: 8px 16px;
+    }
+    #langToggle {
+      /* botón de idioma separado, no afectado por margenes */
+      padding: 6px 12px;
+    }
   </style>
 </head>
 <body>
+  <button id="langToggle" style="position:fixed;top:10px;right:10px;">English</button>
   <img src="images.jfif" alt="">
   <br>
-  <a href="download.html">download tic80 pro for free</a>
+  <button id="downloadBtn" onclick="window.location.href='download.html'" data-es="descargar tic80 pro gratis" data-en="download tic80 pro for free"></button>
   <br>
-  <a href="./roms/index.html">play gameboy games online</a>
+  <button id="romsBtn" onclick="window.location.href='./roms/index.html'" data-es="jugar juegos de gameboy en línea" data-en="play gameboy games online"></button>
   <br>
-  <a href="https://gabysanz.github.io">phaser game i'm coding</a>
+  <button id="phaserBtn" onclick="window.location.href='https://gabysanz.github.io'" data-es="juego de phaser en el que estoy codificando" data-en="phaser game i'm coding"></button>
   <br>
-  <a href="https://badenas.itch.io">games i made in the past</a>
+  <button id="pastBtn" onclick="window.location.href='https://badenas.itch.io'" data-es="juegos que hice en el pasado" data-en="games i made in the past"></button>
   <br>
+  <script>
+    // language data and toggle logic
+    const langToggle = document.getElementById('langToggle');
+    let lang = document.documentElement.lang || 'es';
+    function updateLanguage() {
+      document.documentElement.lang = lang;
+      langToggle.textContent = lang === 'es' ? 'English' : 'Español';
+      document.querySelectorAll('button[data-es]').forEach(btn => {
+        btn.textContent = btn.getAttribute(`data-${lang}`);
+      });
+    }
+    langToggle.addEventListener('click', () => {
+      lang = lang === 'es' ? 'en' : 'es';
+      updateLanguage();
+    });
+    updateLanguage();
+  </script>
 </body>
 </html>
 
